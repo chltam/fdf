@@ -1,6 +1,6 @@
 # fdf
 
-## Coordination into isometric projection
+## Cartesian coordinate into isometric projection
 
 ```
 iso_x = (x - y) * cos(30°)
