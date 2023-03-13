@@ -6,16 +6,25 @@
 iso_x = (x - y) * cos(30°)
 iso_y = (x + y) * sin(30°) - z
 ```
-## Horizontal Rotation:
+## Rotation
+
+### Around x-axis
 
 ```
-x' = x * cos(a) - y * sin(a)
-y' = x * sin(a) + y * cos(a)
+x'' = x
+y'' = y * cos(b) - z * sin(b)
+z'' = y * sin(b) + z * cos(b)
 ```
-
-## Vertical Rotation:
+### Around y-axis
 
 ```
-x'' = x * cos(b) + z * sin(b)
-z'' = -x * sin(b) + z * cos(b)
+x'' = x * cos(a) + z * sin(a)
+y'' = y
+z'' = -x * sin(a) + z * cos(a)
+```
+### Around z-axis
+```
+x'' = x * cos(c) - y * sin(c)
+y'' = x * sin(c) + y * cos(c)
+z'' = z
 ```
