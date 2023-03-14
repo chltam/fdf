@@ -12,15 +12,15 @@ iso_y = (x + y) * sin(30°) - z
 
 ```
 x'' = x
-y'' = y * cos(b) - z * sin(b)
-z'' = y * sin(b) + z * cos(b)
+y'' = y * cos(a) - z * sin(a)
+z'' = y * sin(a) + z * cos(a)
 ```
 ### Around y-axis
 
 ```
-x'' = x * cos(a) + z * sin(a)
+x'' = x * cos(b) + z * sin(b)
 y'' = y
-z'' = -x * sin(a) + z * cos(a)
+z'' = -x * sin(b) + z * cos(b)
 ```
 ### Around z-axis
 ```
