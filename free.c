@@ -6,7 +6,7 @@
 /*   By: htam <htam@student.42berlin.de>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 18:41:30 by htam              #+#    #+#             */
-/*   Updated: 2023/03/09 19:17:06 by htam             ###   ########.fr       */
+/*   Updated: 2023/03/18 16:34:48 by htam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,26 @@ void	free_map(char ***map)
 
 void	free_all(t_fdf *fdf)
 {
-	mlx_destroy_image(fdf->mlx, fdf->img);
-	mlx_clear_window(fdf->mlx, fdf->win);
-	mlx_destroy_window(fdf->mlx, fdf->win);
-	mlx_destroy_display(fdf->mlx);
-	// free(fdf->win);
-	free(fdf->mlx);
-	free_map(fdf->map);
-	free(fdf);
+	if (fdf->img)
+		mlx_destroy_image(fdf->mlx, fdf->img);
+	if (fdf->win)
+		mlx_clear_window(fdf->mlx, fdf->win);
+	if (fdf->win)
+		mlx_destroy_window(fdf->mlx, fdf->win);
+	if (fdf->mlx)
+	{
+		mlx_destroy_display(fdf->mlx);
+		free(fdf->mlx);
+	}
+	if (fdf->map)
+		free_map(fdf->map);
+	if (fdf)
+		free(fdf);
+}
+
+int	free_and_exit(t_fdf *fdf)
+{
+	free_all(fdf);
+	exit(0);
+	return (0);
 }
